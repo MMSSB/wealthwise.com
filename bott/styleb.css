@@ -1,0 +1,64 @@
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000000;
+    box-shadow: 0 -1px 5px rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+}
+
+.bottom-nav .nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.bottom-nav .nav-link img {
+    height: 24px;
+    width: 24px;
+    margin-bottom: 4px;
+    transition: transform 0.3s; /* Smooth transform effect */
+}
+
+/* Hover effect for non-active links */
+.bottom-nav .nav-link:hover {
+    color: #FFD700; /* Gold color on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Slight background on hover */
+    border-radius: 10px; /* Rounded corners on hover */
+}
+
+/* Hover effect specifically for the icon */
+.bottom-nav .nav-link:hover img {
+    transform: scale(1.2); /* Scale up icon on hover */
+}
+
+/* Active link styling */
+.bottom-nav .nav-link.active {
+    color: #FFD700; /* Gold color for active link */
+}
+
+/* Active and hover effect for active link */
+.bottom-nav .nav-link.active:hover {
+    color: #FFA500; /* Orange color for hover effect on active link */
+    background-color: rgba(255, 230, 0, 0.295); /* Slightly different background */
+}
+
+/* Hover effect specifically for the icon when active */
+.bottom-nav .nav-link.active:hover img {
+    transform: scale(1.2); /* Scale up icon on hover, same as non-active */
+}
+
+@media (min-width: 768px) {
+    .bottom-nav {
+        display: none;
+    }
+}
+
