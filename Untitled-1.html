@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wealth Wise - Personal Finance</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+header {
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input, button {
+    margin: 5px 0;
+    padding: 5px;
+}
+
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+    section {
+        padding: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Wealth Wise</h1>
+        <nav>
+            <a href="#literacy">Learn</a>
+            <a href="#budget">Budget</a>
+            <a href="#savings">Savings</a>
+            <a href="#reports">Reports</a>
+        </nav>
+    </header>
+
+    <!-- Financial Literacy Hub -->
+    <section id="literacy">
+        <h2>Financial Literacy Hub</h2>
+        <p>Lesson 1: Budgeting Basics</p>
+        <button onclick="showQuiz()">Take Quiz</button>
+        <div id="quiz" style="display:none;">
+            <p>What is the 50/30/20 rule?</p>
+            <input type="text" id="quizAnswer">
+            <button onclick="checkAnswer()">Submit</button>
+            <p id="quizResult"></p>
+        </div>
+    </section>
+
+    <!-- Budgeting & Expense Tracking -->
+    <section id="budget">
+        <h2>Budgeting</h2>
+        <input type="number" id="budgetInput" placeholder="Set Monthly Budget">
+        <button onclick="setBudget()">Save</button>
+        <p>Current Budget: $<span id="budgetDisplay">0</span></p>
+        <input type="number" id="expenseInput" placeholder="Add Expense">
+        <button onclick="addExpense()">Add</button>
+        <ul id="expenseList"></ul>
+    </section>
+
+    <!-- Savings & Investment Tools -->
+    <section id="savings">
+        <h2>Savings & Investments</h2>
+        <input type="number" id="savingsGoal" placeholder="Set Savings Goal">
+        <button onclick="setGoal()">Save</button>
+        <p>Goal: $<span id="goalDisplay">0</span></p>
+        <p>Tip: Invest in low-risk index funds for steady growth.</p>
+    </section>
+
+    <!-- Reports & Analytics -->
+    <section id="reports">
+        <h2>Reports</h2>
+        <canvas id="progressChart" width="300" height="150"></canvas>
+        <button onclick="updateChart()">Refresh</button>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Financial Literacy Quiz
+function showQuiz() {
+    document.getElementById("quiz").style.display = "block";
+}
+
+function checkAnswer() {
+    const answer = document.getElementById("quizAnswer").value.toLowerCase();
+    const result = document.getElementById("quizResult");
+    if (answer.includes("50") && answer.includes("30") && answer.includes("20")) {
+        result.textContent = "Correct! 50% needs, 30% wants, 20% savings.";
+    } else {
+        result.textContent = "Try again!";
+    }
+}
+
+// Budgeting
+let budget = 0;
+let expenses = [];
+
+function setBudget() {
+    budget = parseFloat(document.getElementById("budgetInput").value) || 0;
+    document.getElementById("budgetDisplay").textContent = budget;
+}
+
+function addExpense() {
+    const expense = parseFloat(document.getElementById("expenseInput").value) || 0;
+    expenses.push(expense);
+    const list = document.getElementById("expenseList");
+    const item = document.createElement("li");
+    item.textContent = `$${expense}`;
+    list.appendChild(item);
+    updateChart();
+}
+
+// Savings Goal
+function setGoal() {
+    const goal = parseFloat(document.getElementById("savingsGoal").value) || 0;
+    document.getElementById("goalDisplay").textContent = goal;
+}
+
+// Reports & Analytics (Chart)
+const ctx = document.getElementById("progressChart").getContext("2d");
+let chart = new Chart(ctx, {
+    type: "bar",
+    data: {
+        labels: ["Budget", "Expenses"],
+        datasets: [{
+            label: "Amount ($)",
+            data: [0, 0],
+            backgroundColor: ["#007bff", "#ff4444"]
+        }]
+    },
+    options: { scales: { y: { beginAtZero: true } } }
+});
+
+function updateChart() {
+    const totalExpenses = expenses.reduce((sum, val) => sum + val, 0);
+    chart.data.datasets[0].data = [budget, totalExpenses];
+    chart.update();
+}
+    </script>
+</body>
+</html>

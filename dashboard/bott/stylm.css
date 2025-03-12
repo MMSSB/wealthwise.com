@@ -1,0 +1,16 @@
+.hidden {
+    display: none;
+  }
+  
+  .visible {
+    display: block;
+    background-color: #000000;
+    padding: 10px;
+    border: 1px solid #ffe600;
+    text-align: center;
+    width: 300px;
+    margin: 20px auto;
+    border-radius: 30px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2); /* Optional shadow */
+  }
+  
