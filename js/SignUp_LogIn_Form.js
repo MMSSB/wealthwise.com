@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Hard-coded username and password
     const correctUsername = 'MMS';
-    const correctPassword = '0902';
+    const correctPassword = '0000';
 
     loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
