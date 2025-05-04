@@ -31,7 +31,7 @@
             </div>
 
             <div class="sidebar">
-                <a href="index.html" class="#">
+                <a href="home.html" class="#">
                     <span class="material-icons-sharp">
                         dashboard
                     </span>
@@ -326,8 +326,8 @@
 
                 <div class="profile">
                     <div class="info">
-                        <p>Hey, <b>User</b></p>
-                        <small class="text-muted">Admin</small>
+                        <p>Hey, <b id="loggedUserFName"></b></p>
+                        <small class="text-muted"></small>
                     </div>
                     <div class="profile-photo">
                         <img src="images/icons8-user-48.png">
@@ -407,11 +407,11 @@
 
     </div>
     <div class="bottom-nav">
-        <a href="index.html" class="nav-link">
+        <a href="home.html" class="nav-link">
           <i class="fas fa-home"></i>		
           <span style="font-size: 9px;">Home</span>
         </a>
-        <a href="index.html" class="nav-link">
+        <a href="home.html" class="nav-link">
            <!-- <img src="bott/iconbott/folder_24dp_E8EAED.svg" alt="Courses"> -->
            <i class="fa-solid fa-gauge"></i>
          <!-- <i class="fas fa-graduation-cap"></i>
@@ -422,16 +422,18 @@
           <i class="fa-solid fa-server"></i>
             <span style="font-size: 9px;" >test</span>
         </a>
-        <a href="#" class="nav-link">
-          <i class="fa-solid fa-calculator"></i>
-            <span style="font-size: 9px;">Test</span>
-        </a>
+
         <a href="#" class="nav-link">
           <i class="fas fa-gear"></i>
             <span style="font-size: 9px;">Settings</span>
           </a>
+            <a href="#" onclick="logout()" class="nav-link">
+                <i class="fa-solid fa-right-from-bracket"></i>                  
+                <span style="font-size: 9px;">Logout</span>
+          </a>
     </div> 
 <script src="../js/login.js"></script>
+<script type="module" src="assets/dashauth.js"></script>
 
 <script src="assets/email.js"></script>
     <script src="assets/index.js"></script>
