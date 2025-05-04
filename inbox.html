@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="shortcut icon" href="images/loo.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="#">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <title>Wealth Wise</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="images/loo.png">
+                    <h2 class="Wealth">Wealth<span class="danger">Wise</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="home.html" class="#">
+                    <span class="material-icons-sharp">
+                        dashboard
+                    </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        mms
+                    </span>
+                    <h3>Users</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        receipt_long
+                    </span>
+                    <h3>History</h3>
+                </a>
+                <a href="#" class="#">
+                    <span class="material-icons-sharp">
+                        insights
+                    </span>
+                    <h3>Analytics</h3>
+                </a>
+      <!-- Inside the sidebar section -->
+<a href="inbox.html" class="active">
+    <span class="material-icons-sharp">
+        mail_outline
+    </span>
+    <h3>Inbox</h3>
+</a>
+<!-- Dropdown for Spam and Sent -->
+<a href="#" class="dropdown-toggle">
+    <span class="material-icons-sharp">
+        expand_more
+    </span>
+    <h3>More</h3>
+</a>
+<div class="dropdown-menu">
+    <a href="#">
+    <span class="material-icons-sharp">
+         delete
+        </span>
+        <h3>Trash</h3>
+    </a>
+    <a href="#">
+        <span class="material-icons-sharp">
+            
+        </span>
+        <h3></h3>
+    </a>
+</div>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        mms
+                    </span>
+                    <h3>mms</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        mms
+                    </span>
+                    <h3>mms</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        settings
+                    </span>
+                    <h3>Settings</h3>
+                </a>
+                <!-- <a href="#">
+                    <span class="material-icons-sharp">
+                        add
+                    </span>
+                    <h3>New Login</h3>
+                </a> -->
+                <a onclick="logout()" href="#">
+                    <span class="material-icons-sharp">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of Sidebar Section -->
+
+      <!-- Main Content -->
+      <main>
+        <h1>Analytics</h1>
+        <!-- Analyses -->
+        <div class="analyse">
+            <div class="sales">
+                <div class="status">
+                    <div class="info">
+                        <h2>Emails</h2>
+                        <h2 id="incomeDisplay">4</h2>
+                    </div>
+                    <div class="progresss">
+                        <img class="ico" src="images/mailgreenm.png" alt="">
+                        <!-- <svg>
+                            <circle cx="38" cy="38" r="36"></circle>
+                        </svg>
+                        <div class="percentage">
+                            <p id="incomePercentage"></p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="visits">
+                <div class="status">
+                    <div class="info">
+                        <h2>Unread Emails</h2>
+                        <h2 id="expensesDisplay">1</h2>
+                    </div>
+                    <div class="progresss">
+                    <img class="ico" src="images/mailunread.png" alt="">
+
+                        <!-- <svg>
+                            <circle cx="38" cy="38" r="36"></circle>
+                        </svg>
+                        <div class="percentage">
+                            <p id="expensesPercentage"></p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="searches">
+                <div class="status">
+                    <div class="info">
+                        <h2>Trash</h2>
+                        <h2 id="savingsDisplay">0</h2>
+                    </div>
+                    <div class="progresss">
+                        <img class="ico" src="images/trash.png" alt="">
+                        <!-- <svg>
+                            <circle cx="38" cy="38" r="36"></circle>
+                        </svg>
+                        <div class="percentage">
+                            <p id="savingsPercentage">+0%</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- End of Analyses -->
+
+            <!-- New Users Section -->
+            <div class="new-userss">
+                <h2>Inbox</h2>
+                <div class="user-lists">
+                        <div class="inbox-header">
+                          <!-- <h2 class="inbo">Inbox</h2> -->
+                          <div class="search-bar">
+                            <input type="text" placeholder="Search emails...">
+                            <button>Search</button>
+                          </div>
+                        </div>
+                        <div class="email-list">
+                          <div class="email-item unread">
+                            <div class="email-sender">
+                              <img src="images/bmp-logo.png" alt="Sender Avatar">
+                              <div class="sender-info">
+                                <h4>Banque Misr</h4>
+                                <p>you have received 5000$ </p>
+                              </div>
+                            </div>
+                            <div class="email-preview">
+                              <p>click here to show the Email...</p>
+                            </div>
+                            <div class="email-time">10:30AM</div>
+                          </div>
+                          <div class="email-item">
+                            <div class="email-sender">
+                              <img src="images/qnb.ai-converted.png" alt="Sender Avatar">
+                              <div class="sender-info">
+                                <h4>QNB</h4>
+                                <p> you have transfered 2000$</p>
+                              </div>
+                            </div>
+                            <div class="email-preview">
+                              <p>click here to show the Email...</p>
+                            </div>
+                            <div class="email-time">Yesterday</div>
+                          </div>
+                          <div class="email-item">
+                            <div class="email-sender">
+                              <img src="images/bank-ahly.png" alt="Sender Avatar">
+                              <div class="sender-info">
+                                <h4>National Bank of Egypt</h4>
+                                <p>your account have 100000$</p>
+                              </div>
+                            </div>
+                            <div class="email-preview">
+                              <p>Check out the Account...</p>
+                            </div>
+                            <div class="email-time">2days ago</div>
+                          </div>
+                          <div class="email-item">
+                            <div class="email-sender">
+                              <img src="images/credy.png" alt="Sender Avatar">
+                              <div class="sender-info">
+                                <h4>Credit Agricole Egypt</h4>
+                                <p> you have received 6000$</p>
+                              </div>
+                            </div>
+                            <div class="email-preview">
+                              <p>click here to show the Email...</p>
+                            </div>
+                            <div class="email-time">5days ago</div>
+                          </div>
+                        </div>
+                      </div>
+                    <!-- <section id="calculator">
+                        <div class="input-group">
+                            <label for="income">Enter Your Monthly Income:</label>
+                            <input type="number" id="income" placeholder="e.g., 3000">
+                        </div>
+                        <div class="input-group">
+                            <label for="expenses">Enter Your Monthly Expenses:</label>
+                            <input type="number" id="expenses" placeholder="e.g., 2000">
+                        </div>
+                        <div class="input-group">
+                            <label for="savings">Enter Your Savings Goal:</label>
+                            <input type="number" id="savings" placeholder="e.g., 500">
+                        </div>
+                        <button class="btn" id="calculateButton">Calculate</button>
+                        <div class="result" id="result"></div>
+                        <div class="suggestions" id="suggestions"></div>
+                    </section> -->
+                  <!--  <div class="user">
+                        <img src="images/">
+                        <h2>Jack</h2>
+                        <p>54 Min Ago</p>
+                    </div>
+                    <div class="user">
+                        <img src="images/">
+                        <h2>Amir</h2>
+                        <p>3 Hours Ago</p>
+                    </div>
+                    <div class="user">
+                        <img src="images/">
+                        <h2>Ember</h2>
+                        <p>6 Hours Ago</p>
+                    </div>
+                    <div class="user">
+                        <img src="images/plus.png">
+                        <h2>More</h2>
+                        <p>New User</p>
+                    </div> -->
+
+            </div>
+            <!-- End of New Users Section -->
+
+            <!-- Recent Table -->
+            <div class="recent-orders">
+                <h2>Recent</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>Number</th>
+                            <th>Payment</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <a href="#">Show All</a>
+            </div>
+            <!-- End of Recent -->
+
+        </main>
+        <!-- End of Main Content -->
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b id="loggedUserFName"></b></p>
+                        <small class="text-muted"></small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/icons8-user-48.png">
+                    </div>
+                </div>
+
+            </div>
+            <!-- End of Nav -->
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="images/emailgreen.png">
+                    <h1 class="Wealth">Mail<span class="danger">Wise</span></h1>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="header">
+                    <h2 style="color: #0066ff;">Reminders</h2>
+                    <span class="material-icons-sharp">
+                        notifications_none
+                    </span>
+                </div>
+
+                <div class="notification">
+                    <div class="icon">
+                        <span class="material-icons-sharp">
+                            mms
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>test</h3>
+                            <small class="text_muted">
+                                00:00 AM - 10:00 PM
+                            </small>
+                        </div>
+                        <span class="material-icons-sharp">
+                            mms
+                        </span>
+                    </div>
+                </div>
+
+                <div class="notification deactive">
+                    <div class="icon">
+                        <span class="material-icons-sharp">
+                            edit
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>test</h3>
+                            <small class="text_muted">
+                                00:00 AM - 0:00 PM
+                            </small>
+                        </div>
+                        <span class="material-icons-sharp">
+                            mms
+                        </span>
+                    </div>
+                </div>
+
+                <div class="notification add-reminder">
+                    <div>
+                        <span class="material-icons-sharp">
+                            add
+                        </span>
+                        <h3>Add </h3>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="bottom-nav">
+        <a href="home.html" class="nav-link">
+          <i class="fas fa-home"></i>		
+          <span style="font-size: 9px;">Home</span>
+        </a>
+        <a href="home.html" class="nav-link">
+           <!-- <img src="bott/iconbott/folder_24dp_E8EAED.svg" alt="Courses"> -->
+           <i class="fa-solid fa-gauge"></i>
+         <!-- <i class="fas fa-graduation-cap"></i>
+          <i class="fa-solid fa-folder"></i> -->
+            <span style="font-size: 9px;">dashboard</span>
+        </a>
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-server"></i>
+            <span style="font-size: 9px;" >test</span>
+        </a>
+
+        <a href="#" class="nav-link">
+          <i class="fas fa-gear"></i>
+            <span style="font-size: 9px;">Settings</span>
+          </a>
+            <a href="#" onclick="logout()" class="nav-link">
+                <i class="fa-solid fa-right-from-bracket"></i>                  
+                <span style="font-size: 9px;">Logout</span>
+          </a>
+    </div> 
+<script src="../js/login.js"></script>
+<script type="module" src="assets/dashauth.js"></script>
+
+<script src="assets/email.js"></script>
+    <script src="assets/index.js"></script>
+    <script src="assets/orders.js"></script>
+
+   
+
+
+<script>
+    function openEmail(senderName, subject, content) {
+  // Update overlay content
+  document.getElementById('email-subject').innerText = subject;
+  document.getElementById('email-sender-name').innerText = senderName;
+  document.getElementById('email-sender-email').innerText = `${senderName.toLowerCase().replace(' ', '.')}@example.com`;
+  document.getElementById('email-content').innerText = content;
+
+  // Show overlay
+  document.getElementById('email-overlay').style.display = 'flex';
+}
+
+function closeEmail() {
+  // Hide overlay
+  document.getElementById('email-overlay').style.display = 'none';
+}
+</script>
+</html>
