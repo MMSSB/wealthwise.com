@@ -18,9 +18,9 @@
 
 body {
     background-color: var(--bg-color);
-    /* background-image: url(/images/landscape.jpg); */
-    background: #000 center/cover url("/images/landscape.jpg") no-repeat;
-    background: linear-gradient(90deg,#3b9aff, #00bbf0,#e2e2e2, #76FAE2FF,  #1b9c85); /* Register gradient */
+    background-image: url(https://mmssb.github.io/wealthwise.com/images/landscape.jpg);
+    /* background: #000 center/cover url("/images/landscape.jpg") no-repeat; */
+    /* background: linear-gradient(90deg,#3b9aff, #00bbf0,#e2e2e2, #76FAE2FF,  #1b9c85);  */
 
     display: flex;
     justify-content: center;
