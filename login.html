@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/signinup.css">
+    <script type="module" src="js/firebaseauth.js"></script>
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Sign Up Form -->
+        <div class="form-container" id="signup" style="display:none;">
+            <div class="form-header">
+                <img class="usericonlog" src="/images/add-user (1).png" alt="">
+                <h1>Registration</h1>
+                <p>Create your account</p>
+            </div>
+            <form method="post" action="">
+                <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
+                <div class="input-group">
+                    <input type="text" id="fName" placeholder="First name" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="lName" placeholder="Last name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="rEmail" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="rPassword" placeholder="Password" required>
+                </div>
+                <button class="btn primary-btn" id="submitSignUp">Register</button>
+            </form>
+            <!-- <div class="social-divider">
+                <span>or register with social platforms</span>
+            </div>
+            <div class="social-icons">
+                <button class="social-btn"><i class="fab fa-google"></i></button>
+                <button class="social-btn"><i class="fab fa-facebook-f"></i></button>
+            </div> -->
+            <div class="form-footer">
+                <p>Already have an account?</p>
+                <button id="signInButton" class="text-btn">Login</button>
+            </div>
+        </div>
+
+        <!-- Sign In Form -->
+        <div class="form-container" id="signIn">
+            <div class="form-header">
+                <img class="usericonlog" src="/images/user (1).png" alt="">
+                <h1>Hello, Welcome!</h1>
+                <p>Login to your account</p>
+            </div>
+            <form method="post" action="">
+                <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <div class="forgot-password">
+                    <a href="#" id="forgotpass">Forgot Password?</a>
+                </div>
+                <button class="btn primary-btn" id="submitSignIn">Login</button>
+            </form>
+            <!-- <div class="social-divider">
+                <span>or login with social platforms</span>
+            </div>
+            <div class="social-icons">
+                <button class="social-btn"><i class="fab fa-google"></i></button>
+                <button class="social-btn"><i class="fab fa-facebook-f"></i></button>
+            </div> -->
+            <div class="form-footer">
+                <p>Don't have an account?</p>
+                <button id="signUpButton" class="text-btn">Register</button>
+            </div>
+        </div>
+    </div>
+    <script src="/js/signinup.js"></script>
+</body>
+</html>
