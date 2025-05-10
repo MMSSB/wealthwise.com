@@ -9,9 +9,9 @@ function toggleMenu(){
 
 
 function hover(element) {
-    element.setAttribute('src', '/dashboard/images/maleuser.gif');
+    element.setAttribute('src', '../dashboard/images/maleuser.gif');
 }
 
 function unhover(element) {
-    element.setAttribute('src', '/dashboard/images/male.png');
+        element.setAttribute('src', '../dashboard/images/male.png');
 }
