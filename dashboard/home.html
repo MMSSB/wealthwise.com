@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <title>Wealth Wise</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
 </head>
 
 <body>
@@ -237,7 +238,7 @@
                     </span>
                 </div>
 
-                <div class="profile">
+                <!-- <div class="profile">
                     <div class="info">
                         <p>Hey, <b id="loggedUserFName"></b></p>
                         <small class="text-muted" ></small>
@@ -247,13 +248,59 @@
                     </div>
                 </div>
 
-            </div>
+            </div> -->
             <!-- End of Nav -->
 
-            <div class="user-profile">
+
+
+        
+<div class="profile" onclick="toggleMenu()">
+    <div class="info">
+        <p>Hey, <h4 id="loggedUserFName"></h4></p>
+    </div>
+    <div class="profile-photo">
+        <!-- id="navProfilePhoto" -->
+        <img id="my-img" onmouseover="hover(this);" onmouseout="unhover(this);" src="images/male.png">
+    </div>
+    <div class="sub-menu-wrap" id="subMenu">
+        <div class="sub-menu">
+            <div class="user-info">
+                <!-- id="profilePhoto" -->
+        <img id="my-img" onmouseover="hover(this);" onmouseout="unhover(this);" src="images/male.png">
+                <h4 id="usernameFname"></h4>
+                <h4 id="usernamelname"></h4>
+            </div>
+                                <hr>
+                    <a href="#"  class="sub-menu-link">
+                     <i class="fa-solid fa-user fa-xl"></i>
+                    <p>Profile</p>
+                    <span>></span>
+                </a>
+                <!-- <hr> -->
+                <a href="#" class="sub-menu-link">
+                    <!-- <span class="material-symbols-rounded">settings</span> -->
+                       <i class="fa-solid fa-gear fa-xl"></i>
+                    <p> Settings</p>
+                    <span>></span>
+                </a>
+                <!-- <hr> -->
+                <a href="#" id="logoutpro" class="sub-menu-link">
+                     <i class="fa-solid fa-right-from-bracket fa-xl"></i>
+                    <p>Logout</p>
+                    <span>></span>
+                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                <!-- </div> -->
+
+            </div>
+                        <div class="user-profile">
                 <div class="logo">
                     <img src="images/loo.png">
                     <h2>Wealth<span class="danger">Wise</span></h2>
+
                     <p></p>
                 </div>
             </div>
@@ -340,7 +387,8 @@
           <i class="fas fa-gear"></i>
             <span style="font-size: 9px;">Settings</span>
           </a>
-            <a href="#" onclick="logout()" class="nav-link">
+            <a href="#" id="logout" class="nav-link">
+                <!-- <a href="#" onclick="logout()" class="nav-link"> -->
                 <i class="fa-solid fa-right-from-bracket"></i>                  
                 <span style="font-size: 9px;">Logout</span>
           </a>
@@ -350,6 +398,7 @@
 
     <script src="assets/index.js"></script>
     <script src="assets/orders.js"></script>
+    <script src="assets/menu.js"></script>
     <script>
         const calculateButton = document.getElementById('calculateButton');
         const incomeInput = document.getElementById('income');
@@ -583,27 +632,59 @@ calculateButton.addEventListener('click', () => {
     // Rest of your existing code...
 });
 </script>
-<script>
-    // At the start of your script
-window.onload = function() {
-    // Load from localStorage
-    const savedIncome = localStorage.getItem('income');
-    const savedExpenses = localStorage.getItem('expenses');
-    const savedSavings = localStorage.getItem('savings');
-    
-    // Also load from Google Sheets
-    readData('Financial Data', 'A2:E100')
-        .then(response => {
-            const data = response.result.values;
-            if (data && data.length > 0) {
-                // Process the data and update UI
-                const latestEntry = data[data.length - 1];
-                // Update your UI with the latest data
-            }
-        })
-        .catch(err => console.error('Error reading from Google Sheets:', err));
-    
-    // Rest of your existing onload code...
-};
-</script>
+
+
+
+
+
+<!-- <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+    import { getFirestore, getDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyBLCMK2Tm9sk2EBnhqoK9j_y8jiATd-QDA",
+        authDomain: "wealth-wise-3c329.firebaseapp.com",
+        projectId: "wealth-wise-3c329",
+        storageBucket: "wealth-wise-3c329.firebasestorage.app",
+        messagingSenderId: "546585897291",
+        appId: "1:546585897291:web:111d6c2d3170d93f59e0ce",
+        measurementId: "G-PGTS22BHQP"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const db = getFirestore();
+
+    onAuthStateChanged(auth, (user) => {
+        const loggedInUserId = localStorage.getItem('loggedInUserId');
+        if (loggedInUserId) {
+            const docRef = doc(db, "users", loggedInUserId);
+            getDoc(docRef).then((docSnap) => {
+                if (docSnap.exists()) {
+                    const userData = docSnap.data();
+                    if (document.getElementById('loggedUserFName')) {
+                        document.getElementById('loggedUserFName').innerText = userData.firstName || '';
+                    }
+                    if (document.getElementById('usernameFname')) {
+                        document.getElementById('usernameFname').innerText = userData.firstName || '';
+                    }
+                    if (document.getElementById('usernamelname')) {
+                        document.getElementById('usernamelname').innerText = userData.lastName || '';
+                    }
+                    if (userData.profilePhoto) {
+                        const profileImages = document.querySelectorAll('#profilePhoto, #navProfilePhoto, .profile-photo img');
+                        profileImages.forEach(img => {
+                            img.src = userData.profilePhoto;
+                        });
+                    }
+                }
+            });
+        } else {
+            window.location.href = '../index.html';
+        }
+    });
+</script> -->
+
+
 </html>

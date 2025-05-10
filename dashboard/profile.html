@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="shortcut icon" href="images/loo.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <title>Wealth Wise - Profile</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="images/loo.png">
+                    <h2 style="color: #1B9C85;">Wealth<span class="danger">Wise</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="home.html">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">mms</span>
+                    <h3>Coming Soon</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">receipt_long</span>
+                    <h3>History</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">insights</span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="inbox.html">
+                    <span class="material-icons-sharp">mail_outline</span>
+                    <h3>Inbox</h3>
+                    <span class="message-count">4</span>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">mms</span>
+                    <h3>Coming Soon</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">mms</span>
+                    <h3>Coming Soon</h3>
+                </a>
+                <a href="profile.html" class="active">
+                    <span class="material-icons-sharp">person</span>
+                    <h3>Profile</h3>
+                </a>
+                <a href="#" id="logout">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of Sidebar Section -->
+
+        <!-- Main Content -->
+        <main>
+            <h1>Profile</h1>
+            <div class="profile-container">
+                <div class="profile-card">
+                    <h2>User Profile</h2>
+                    <div class="profile-photo-upload">
+                        <img id="profilePhoto" src="images/icons8-user-48.png" alt="Profile Photo">
+                        <input type="file" id="photoUpload" accept="image/*">
+                        <button class="btn" id="uploadPhotoBtn">Upload Photo</button>
+                    </div>
+                    <div class="input-group">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" placeholder="Enter First Name">
+                    </div>
+                    <div class="input-group">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" placeholder="Enter Last Name">
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" readonly>
+                    </div>
+                    <button class="btn" id="updateProfileBtn">Update Profile</button>
+                </div>
+            </div>
+        </main>
+        <!-- End of Main Content -->
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp">dark_mode</span>
+                    <span class="material-icons-sharp active">light_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b id="loggedUserFName"></b></p>
+                        <small class="text-muted"></small>
+                    </div>
+                    <div class="profile-photo">
+                        <img id="navProfilePhoto" src="images/icons8-user-48.png">
+                    </div>
+                </div>
+            </div>
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="images/loo.png">
+                    <h2>Wealth<span class="danger">Wise</span></h2>
+                    <p></p>
+                </div>
+            </div>
+            <div class="reminders">
+                <div class="header">
+                    <h2 style="color: #0066ff;">Reminders</h2>
+                    <span class="material-icons-sharp">notifications_none</span>
+                </div>
+                <div class="notification">
+                    <div class="icon">
+                        <span class="material-icons-sharp">mms</span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Update Profile</h3>
+                            <small class="text_muted">Complete your profile for better experience</small>
+                        </div>
+                        <span class="material-icons-sharp">mms</span>
+                    </div>
+                </div>
+                <div class="notification add-reminder">
+                    <div>
+                        <span class="material-icons-sharp">add</span>
+                        <h3>Add Reminder</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-nav">
+        <a href="home.html" class="nav-link">
+            <i class="fas fa-home"></i>
+            <span style="font-size: 9px;">Home</span>
+        </a>
+        <a href="home.html" class="nav-link">
+            <i class="fa-solid fa-gauge"></i>
+            <span style="font-size: 9px;">Dashboard</span>
+        </a>
+        <a href="profile.html" class="nav-link active">
+            <i class="fas fa-user"></i>
+            <span style="font-size: 9px;">Profile</span>
+        </a>
+        <a href="#" class="nav-link">
+            <i class="fas fa-gear"></i>
+            <span style="font-size: 9px;">Settings</span>
+        </a>
+        <a href="#" onclick="logout()" class="nav-link">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span style="font-size: 9px;">Logout</span>
+        </a>
+    </div>
+
+    <script type="module" src="assets/profile.js"></script>
+    <script src="assets/index.js"></script>
+    <!-- <script src="assets/profile-utils.js"></script> -->
+    
+    <script type="module">
+    import { setupProfileUpload } from './assets/profile-utils.js';
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+    import { getFirestore, getDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+
+    // Initialize Firebase (or import from dashauth.js)
+    const firebaseConfig = {
+        apiKey: "AIzaSyBLCMK2Tm9sk2EBnhqoK9j_y8jiATd-QDA",
+        authDomain: "wealth-wise-3c329.firebaseapp.com",
+        projectId: "wealth-wise-3c329",
+        storageBucket: "wealth-wise-3c329.firebasestorage.app",
+        messagingSenderId: "546585897291",
+        appId: "1:546585897291:web:111d6c2d3170d93f59e0ce",
+        measurementId: "G-PGTS22BHQP"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const db = getFirestore();
+
+    // Setup profile upload
+    setupProfileUpload('uploadPhotoBtn', 'photoUpload');
+
+    // Rest of your profile page logic...
+    onAuthStateChanged(auth, (user) => {
+        const loggedInUserId = localStorage.getItem('loggedInUserId');
+        if (loggedInUserId) {
+            const docRef = doc(db, "users", loggedInUserId);
+            getDoc(docRef)
+                .then((docSnap) => {
+                    if (docSnap.exists()) {
+                        const userData = docSnap.data();
+                        document.getElementById('loggedUserFName').innerText = userData.firstName || '';
+                        document.getElementById('firstName').value = userData.firstName || '';
+                        document.getElementById('lastName').value = userData.lastName || '';
+                        document.getElementById('email').value = userData.email || '';
+                        if (userData.profilePhoto) {
+                            document.getElementById('profilePhoto').src = userData.profilePhoto;
+                            document.getElementById('navProfilePhoto').src = userData.profilePhoto;
+                        }
+                    }
+                });
+        } else {
+            window.location.href = '../index.html';
+        }
+    });
+
+    // Handle profile update
+    document.getElementById('updateProfileBtn').addEventListener('click', () => {
+        const userId = localStorage.getItem('loggedInUserId');
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+
+        if (!firstName || !lastName) {
+            alert('Please enter both first and last names.');
+            return;
+        }
+
+        const docRef = doc(db, "users", userId);
+        updateDoc(docRef, { firstName, lastName })
+            .then(() => {
+                document.getElementById('loggedUserFName').innerText = firstName;
+                alert('Profile updated successfully!');
+            });
+    });
+</script>
+</body>
+</html>

@@ -107,12 +107,13 @@
                     </span>
                     <h3>New Login</h3>
                 </a> -->
-                <a onclick="logout()" href="#">
+                <!-- <a onclick="logout()" href="#">
                     <span class="material-icons-sharp">
                         logout
                     </span>
                     <h3>Logout</h3>
-                </a>
+                </a> -->
+                
             </div>
         </aside>
         <!-- End of Sidebar Section -->
@@ -324,17 +325,47 @@
 
                 </div>
 
-                <div class="profile">
-                    <div class="info">
-                        <p>Hey, <b id="loggedUserFName"></b></p>
-                        <small class="text-muted"></small>
-                    </div>
-                    <div class="profile-photo">
-                        <img src="images/icons8-user-48.png">
+<div class="profile" onclick="toggleMenu()">
+    <div class="info">
+        <p>Hey, <h4 id="loggedUserFName"></h4></p>
+    </div>
+    <div class="profile-photo">
+        <!-- id="navProfilePhoto" -->
+        <img id="my-img" onmouseover="hover(this);" onmouseout="unhover(this);" src="images/male.png">
+    </div>
+    <div class="sub-menu-wrap" id="subMenu">
+        <div class="sub-menu">
+            <div class="user-info">
+                <!-- id="profilePhoto" -->
+        <img id="my-img" onmouseover="hover(this);" onmouseout="unhover(this);" src="images/male.png">
+                <h4 id="usernameFname"></h4>
+                <h4 id="usernamelname"></h4>
+            </div>
+                                <hr>
+                    <a href="#"  class="sub-menu-link">
+                     <i class="fa-solid fa-user fa-xl"></i>
+                    <p>Profile</p>
+                    <span>></span>
+                </a>
+                <!-- <hr> -->
+                <a href="#" class="sub-menu-link">
+                    <!-- <span class="material-symbols-rounded">settings</span> -->
+                       <i class="fa-solid fa-gear fa-xl"></i>
+                    <p> Settings</p>
+                    <span>></span>
+                </a>
+                <!-- <hr> -->
+                <a href="#" id="logoutpro" class="sub-menu-link">
+                     <i class="fa-solid fa-right-from-bracket fa-xl"></i>
+                    <p>Logout</p>
+                    <span>></span>
+                </a>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-
-            </div>
+            
             <!-- End of Nav -->
 
             <div class="user-profile">
@@ -427,7 +458,9 @@
           <i class="fas fa-gear"></i>
             <span style="font-size: 9px;">Settings</span>
           </a>
-            <a href="#" onclick="logout()" class="nav-link">
+          <a href="#" id="logout" class="nav-link">
+
+            <!-- <a href="#" onclick="logout()" class="nav-link"> -->
                 <i class="fa-solid fa-right-from-bracket"></i>                  
                 <span style="font-size: 9px;">Logout</span>
           </a>
@@ -438,6 +471,7 @@
 <script src="assets/email.js"></script>
     <script src="assets/index.js"></script>
     <script src="assets/orders.js"></script>
+        <script src="assets/menu.js"></script>
 
    
 
