@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 import { getFirestore, getDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-storage.js";
+import { setupProfileIcons, PROFILE_ICONS } from './profile-utils.js';
 
 const firebaseConfig = {
     apiKey: "AIzaSyBLCMK2Tm9sk2EBnhqoK9j_y8jiATd-QDA",
@@ -17,7 +17,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore();
-const storage = getStorage();
+
+// Initialize profile icons after DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    setupProfileIcons();
+});
 
 onAuthStateChanged(auth, (user) => {
     const loggedInUserId = localStorage.getItem('loggedInUserId');
@@ -31,7 +35,21 @@ onAuthStateChanged(auth, (user) => {
                     document.getElementById('firstName').value = userData.firstName || '';
                     document.getElementById('lastName').value = userData.lastName || '';
                     document.getElementById('email').value = userData.email || '';
-                    if (userData.profilePhoto) {
+                    
+                    // Handle profile photo display
+                    if (userData.profileIconId && PROFILE_ICONS[userData.profileIconId]) {
+                        const iconUrl = PROFILE_ICONS[userData.profileIconId];
+                        document.getElementById('profilePhoto').src = iconUrl;
+                        document.getElementById('navProfilePhoto').src = iconUrl;
+                        
+                        // Mark the selected icon
+                        setTimeout(() => {
+                            const selectedIcon = document.querySelector(`.profile-icon-option:nth-child(${userData.profileIconId})`);
+                            if (selectedIcon) {
+                                selectedIcon.classList.add('selected');
+                            }
+                        }, 100);
+                    } else if (userData.profilePhoto) {
                         document.getElementById('profilePhoto').src = userData.profilePhoto;
                         document.getElementById('navProfilePhoto').src = userData.profilePhoto;
                     }
@@ -46,37 +64,6 @@ onAuthStateChanged(auth, (user) => {
         console.log("User Id not found in local storage");
         window.location.href = '../index.html';
     }
-});
-
-// Handle photo upload
-document.getElementById('uploadPhotoBtn').addEventListener('click', () => {
-    const fileInput = document.getElementById('photoUpload');
-    const file = fileInput.files[0];
-    if (!file) {
-        alert('Please select an image to upload.');
-        return;
-    }
-
-    const userId = localStorage.getItem('loggedInUserId');
-    const storageRef = ref(storage, `profile_photos/${userId}/${file.name}`);
-
-    uploadBytes(storageRef, file)
-        .then((snapshot) => {
-            return getDownloadURL(snapshot.ref);
-        })
-        .then((downloadURL) => {
-            const docRef = doc(db, "users", userId);
-            return updateDoc(docRef, { profilePhoto: downloadURL }).then(() => downloadURL);
-        })
-        .then((downloadURL) => {
-            document.getElementById('profilePhoto').src = downloadURL;
-            document.getElementById('navProfilePhoto').src = downloadURL;
-            alert('Profile photo updated successfully!');
-        })
-        .catch((error) => {
-            console.error('Error uploading photo:', error);
-            alert('Failed to upload photo. Please try again.');
-        });
 });
 
 // Handle profile update

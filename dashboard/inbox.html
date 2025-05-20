@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <link rel="shortcut icon" href="images/loo.png" type="image/x-icon">
@@ -83,7 +83,7 @@
         <h3></h3>
     </a>
 </div>
-                <a href="#">
+                <!-- <a href="#">
                     <span class="material-icons-sharp">
                         mms
                     </span>
@@ -94,12 +94,16 @@
                         mms
                     </span>
                     <h3>mms</h3>
-                </a>
-                <a href="#">
+                </a> -->
+                <!-- <a href="#">
                     <span class="material-icons-sharp">
                         settings
                     </span>
                     <h3>Settings</h3>
+                </a> -->
+                                <a href="profile.html" >
+                    <span class="material-icons-sharp">person</span>
+                    <h3>Profile</h3>
                 </a>
                 <!-- <a href="#">
                     <span class="material-icons-sharp">
@@ -113,7 +117,12 @@
                     </span>
                     <h3>Logout</h3>
                 </a> -->
-                
+                                <a href="#" id="logout">
+                    <span id="logout" class="material-icons-sharp">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
             </div>
         </aside>
         <!-- End of Sidebar Section -->
@@ -325,24 +334,24 @@
 
                 </div>
 
-<div class="profile" onclick="toggleMenu()">
-    <div class="info">
-        <p>Hey, <h4 id="loggedUserFName"></h4></p>
-    </div>
-    <div class="profile-photo">
-        <!-- id="navProfilePhoto" -->
-        <img id="my-img" onmouseover="hover(this);" onmouseout="unhover(this);" src="images/male.png">
-    </div>
+                <div class="profile" onclick="toggleMenu()">
+                    <div class="info">
+                        <p>Hey, <b id="loggedUserFName"></b></p>
+                        <small class="text-muted"></small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/icons8-user-48.png">
+                    </div>
+
     <div class="sub-menu-wrap" id="subMenu">
         <div class="sub-menu">
             <div class="user-info">
-                <!-- id="profilePhoto" -->
-        <img id="my-img" onmouseover="hover(this);" onmouseout="unhover(this);" src="images/male.png">
+                <img  src="images/icons8-user-48.png">
                 <h4 id="usernameFname"></h4>
                 <h4 id="usernamelname"></h4>
             </div>
                                 <hr>
-                    <a href="#"  class="sub-menu-link">
+                    <a href="profile.html"  class="sub-menu-link">
                      <i class="fa-solid fa-user fa-xl"></i>
                     <p>Profile</p>
                     <span>></span>
@@ -364,7 +373,8 @@
 
                         </div>
                     </div>
-                </div>
+                    </div>
+                <!-- </div> -->
             
             <!-- End of Nav -->
 
@@ -465,13 +475,14 @@
                 <span style="font-size: 9px;">Logout</span>
           </a>
     </div> 
-<script src="../js/login.js"></script>
-<script type="module" src="assets/dashauth.js"></script>
-
-<script src="assets/email.js"></script>
+    <!-- Add the profile loader script -->
+    <script src="../js/login.js"></script>
+    <script type="module" src="assets/dashauth.js"></script>
+    <script src="assets/load-profile.js"></script>
+    <script src="assets/email.js"></script>
     <script src="assets/index.js"></script>
     <script src="assets/orders.js"></script>
-        <script src="assets/menu.js"></script>
+    <script src="assets/menu.js"></script>
 
    
 

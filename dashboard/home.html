@@ -38,12 +38,12 @@
                     </span>
                     <h3>Dashboard</h3>
                 </a>
-                <a href="#">
+                <!-- <a href="#">
                     <span class="material-icons-sharp">
                         mms
                     </span>
                     <h3>Comming Soon</h3>
-                </a>
+                </a> -->
                 <a href="#">
                     <span class="material-icons-sharp">
                         receipt_long
@@ -64,7 +64,7 @@
                     <span class="message-count">4</span>
                     
                 </a>
-                <a href="#">
+                <!-- <a href="#">
                     <span class="material-icons-sharp">
                         mms
                     </span>
@@ -75,12 +75,16 @@
                         mms
                     </span>
                     <h3>Comming Soon</h3>
-                </a>
-                <a href="#">
+                </a> -->
+                <!-- <a href="#">
                     <span class="material-icons-sharp">
                         settings
                     </span>
                     <h3>Settings</h3>
+                </a> -->
+                <a href="profile.html" >
+                    <span class="material-icons-sharp">person</span>
+                    <h3>Profile</h3>
                 </a>
                 <!-- <a href="#">
                     <span class="material-icons-sharp">
@@ -254,24 +258,25 @@
 
 
         
-<div class="profile" onclick="toggleMenu()">
-    <div class="info">
-        <p>Hey, <h4 id="loggedUserFName"></h4></p>
-    </div>
-    <div class="profile-photo">
-        <!-- id="navProfilePhoto" -->
-        <img id="my-img" onmouseover="hover(this);" onmouseout="unhover(this);" src="images/male.png">
-    </div>
+
+                <div class="profile" onclick="toggleMenu()">
+                    <div class="info">
+                        <p>Hey, <h4 id="loggedUserFName"></h4></p>
+                        <small class="text-muted"></small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/icons8-user-48.png">
+                    </div>
+
     <div class="sub-menu-wrap" id="subMenu">
         <div class="sub-menu">
             <div class="user-info">
-                <!-- id="profilePhoto" -->
-        <img id="my-img" onmouseover="hover(this);" onmouseout="unhover(this);" src="images/male.png">
+                <img  src="images/icons8-user-48.png">
                 <h4 id="usernameFname"></h4>
                 <h4 id="usernamelname"></h4>
             </div>
                                 <hr>
-                    <a href="#"  class="sub-menu-link">
+                    <a href="profile.html"  class="sub-menu-link">
                      <i class="fa-solid fa-user fa-xl"></i>
                     <p>Profile</p>
                     <span>></span>
@@ -294,6 +299,7 @@
                         </div>
                     </div>
                 <!-- </div> -->
+                 
 
             </div>
                         <div class="user-profile">
@@ -393,12 +399,89 @@
                 <span style="font-size: 9px;">Logout</span>
           </a>
     </div> 
-<script src="../js/login.js"></script>
-<script type="module" src="assets/dashauth.js"></script>
-
+    <!-- Add the profile loader script -->
+    <script src="../js/login.js"></script>
+    <script type="module" src="assets/dashauth.js"></script>
+    <script src="assets/load-profile.js"></script>
     <script src="assets/index.js"></script>
     <script src="assets/orders.js"></script>
     <script src="assets/menu.js"></script>
+    <!-- <script type="module" src="assets/prof.js"></script> -->
+        <!-- <script type="module" src="assets/profile.js"></script> -->
+            <!-- <script type="module" src="assets/profile-utils.js"></script> -->
+
+
+        <!-- <script src="assets/prof.js" type="module"></script> -->
+
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { getFirestore, getDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+import { PROFILE_ICONS } from './assets/profile-utils.js';
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBLCMK2Tm9sk2EBnhqoK9j_y8jiATd-QDA",
+    authDomain: "wealth-wise-3c329.firebaseapp.com",
+    projectId: "wealth-wise-3c329",
+    storageBucket: "wealth-wise-3c329.firebasestorage.app",
+    messagingSenderId: "546585897291",
+    appId: "1:546585897291:web:111d6c2d3170d93f59e0ce",
+    measurementId: "G-PGTS22BHQP"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+const db = getFirestore();
+
+// Function to load user profile data
+export function loadUserProfile() {
+    const loggedInUserId = localStorage.getItem('loggedInUserId');
+    if (loggedInUserId) {
+        const docRef = doc(db, "users", loggedInUserId);
+        getDoc(docRef)
+            .then((docSnap) => {
+                if (docSnap.exists()) {
+                    const userData = docSnap.data();
+                    
+                    // Update user name
+                    const userNameElements = document.querySelectorAll('#loggedUserFName, #usernameFname');
+                    userNameElements.forEach(element => {
+                        if (element) element.innerText = userData.firstName || '';
+                    });
+
+                    // Update last name if element exists
+                    const lastNameElement = document.getElementById('usernamelname');
+                    if (lastNameElement) {
+                        lastNameElement.innerText = userData.lastName || '';
+                    }
+
+                    // Update profile images
+                    if (userData.profileIconId && PROFILE_ICONS[userData.profileIconId]) {
+                        const iconUrl = PROFILE_ICONS[userData.profileIconId];
+                        const profileImages = document.querySelectorAll('#profilePhoto, #navProfilePhoto, .profile-photo img');
+                        profileImages.forEach(img => {
+                            if (img) img.src = iconUrl;
+                        });
+                    } else if (userData.profilePhoto) {
+                        const profileImages = document.querySelectorAll('#profilePhoto, #navProfilePhoto, .profile-photo img');
+                        profileImages.forEach(img => {
+                            if (img) img.src = userData.profilePhoto;
+                        });
+                    }
+                }
+            })
+            .catch((error) => {
+                console.error("Error loading user profile:", error);
+            });
+    } else {
+        window.location.href = '../index.html';
+    }
+}
+</script>
+
+
     <script>
         const calculateButton = document.getElementById('calculateButton');
         const incomeInput = document.getElementById('income');

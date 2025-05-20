@@ -1,0 +1,37 @@
+                <!-- Updated Profile Section -->
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <h4 id="loggedUserFName"></h4></p>
+                    </div>
+                    <div class="profile-photo">
+                        <img id="navProfilePhoto" src="images/icons8-user-48.png" alt="Profile">
+                    </div>
+                    <div class="sub-menu-wrap" id="subMenu">
+                        <div class="sub-menu">
+                            <div class="user-info">
+                                <img id="profilePhoto" src="images/icons8-user-48.png" alt="Profile">
+                                <div class="user-details">
+                                    <h4 id="usernameFname"></h4>
+                                    <h4 id="usernamelname"></h4>
+                                </div>
+                            </div>
+                            <hr>
+                            <a href="profile.html" class="sub-menu-link">
+                                <i class="fa-solid fa-user fa-xl"></i>
+                                <p>Profile</p>
+                                <span>></span>
+                            </a>
+                            <a href="#" class="sub-menu-link">
+                                <i class="fa-solid fa-gear fa-xl"></i>
+                                <p>Settings</p>
+                                <span>></span>
+                            </a>
+                            <a href="#" id="logoutpro" class="sub-menu-link">
+                                <i class="fa-solid fa-right-from-bracket fa-xl"></i>
+                                <p>Logout</p>
+                                <span>></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>

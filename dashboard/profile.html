@@ -70,10 +70,10 @@
             <div class="profile-container">
                 <div class="profile-card">
                     <h2>User Profile</h2>
-                    <div class="profile-photo-upload">
+                    <div class="profile-photo-section">
                         <img id="profilePhoto" src="images/icons8-user-48.png" alt="Profile Photo">
-                        <input type="file" id="photoUpload" accept="image/*">
-                        <button class="btn" id="uploadPhotoBtn">Upload Photo</button>
+                        <h3>Choose your profile icon</h3>
+                        <div id="profileIconsContainer" class="profile-icons-grid"></div>
                     </div>
                     <div class="input-group">
                         <label for="firstName">First Name:</label>
@@ -103,7 +103,7 @@
                     <span class="material-icons-sharp">dark_mode</span>
                     <span class="material-icons-sharp active">light_mode</span>
                 </div>
-                <div class="profile">
+                <!-- <div class="profile">
                     <div class="info">
                         <p>Hey, <b id="loggedUserFName"></b></p>
                         <small class="text-muted"></small>
@@ -112,36 +112,76 @@
                         <img id="navProfilePhoto" src="images/icons8-user-48.png">
                     </div>
                 </div>
+            </div> -->
+                            <div class="profile" onclick="toggleMenu()">
+                    <div class="info">
+                        <p>Hey, <b id="loggedUserFName"></b></p>
+                        <small class="text-muted"></small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/icons8-user-48.png">
+                    </div>
+
+    <div class="sub-menu-wrap" id="subMenu">
+        <div class="sub-menu">
+            <div class="user-info">
+                <img  src="images/icons8-user-48.png">
+                <h4 id="usernameFname"></h4>
+                <h4 id="usernamelname"></h4>
             </div>
+                                <hr>
+                    <a href="profile.html"  class="sub-menu-link">
+                     <i class="fa-solid fa-user fa-xl"></i>
+                    <p>Profile</p>
+                    <span>></span>
+                </a>
+                <!-- <hr> -->
+                <a href="#" class="sub-menu-link">
+                    <!-- <span class="material-symbols-rounded">settings</span> -->
+                       <i class="fa-solid fa-gear fa-xl"></i>
+                    <p> Settings</p>
+                    <span>></span>
+                </a>
+                <!-- <hr> -->
+                <a href="#" id="logoutpro" class="sub-menu-link">
+                     <i class="fa-solid fa-right-from-bracket fa-xl"></i>
+                    <p>Logout</p>
+                    <span>></span>
+                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    </div>
             <div class="user-profile">
                 <div class="logo">
-                    <img src="images/loo.png">
+                    <img id="my-img" onmouseover="hover(this);" onmouseout="unhover(this);"src="images/mind.png">
                     <h2>Wealth<span class="danger">Wise</span></h2>
                     <p></p>
                 </div>
             </div>
             <div class="reminders">
                 <div class="header">
-                    <h2 style="color: #0066ff;">Reminders</h2>
-                    <span class="material-icons-sharp">notifications_none</span>
+                    <!-- <h2 style="color: #0066ff;">Reminders</h2> -->
+                    <!-- <span class="material-icons-sharp">notifications_none</span> -->
                 </div>
                 <div class="notification">
                     <div class="icon">
-                        <span class="material-icons-sharp">mms</span>
+                        <span class="material-icons-sharp">person</span>
                     </div>
                     <div class="content">
                         <div class="info">
                             <h3>Update Profile</h3>
                             <small class="text_muted">Complete your profile for better experience</small>
                         </div>
-                        <span class="material-icons-sharp">mms</span>
+                        <!-- <span class="material-icons-sharp">mms</span>
                     </div>
                 </div>
                 <div class="notification add-reminder">
                     <div>
                         <span class="material-icons-sharp">add</span>
                         <h3>Add Reminder</h3>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -169,76 +209,47 @@
         </a>
     </div>
 
+    <!-- Add this code block to load user profile -->
+    <!-- <div class="profile-loader">
+        <div class="info">
+            <p>Hey, <h4 id="loggedUserFName"></h4></p>
+        </div>
+        <div class="profile-photo">
+            <img id="navProfilePhoto" src="images/icons8-user-48.png">
+        </div>
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                    <img id="profilePhoto" src="images/icons8-user-48.png">
+                    <div class="user-details">
+                        <h4 id="usernameFname"></h4>
+                        <h4 id="usernamelname"></h4>
+                    </div>
+                </div>
+                <hr>
+                <a href="profile.html" class="sub-menu-link">
+                    <i class="fa-solid fa-user fa-xl"></i>
+                    <p>Profile</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <i class="fa-solid fa-gear fa-xl"></i>
+                    <p>Settings</p>
+                    <span>></span>
+                </a>
+                <a href="#" id="logoutpro" class="sub-menu-link">
+                    <i class="fa-solid fa-right-from-bracket fa-xl"></i>
+                    <p>Logout</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Add the profile loader script -->
+    <script src="assets/load-profile.js"></script>
     <script type="module" src="assets/profile.js"></script>
     <script src="assets/index.js"></script>
-    <!-- <script src="assets/profile-utils.js"></script> -->
-    
-    <script type="module">
-    import { setupProfileUpload } from './assets/profile-utils.js';
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-    import { getFirestore, getDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
-
-    // Initialize Firebase (or import from dashauth.js)
-    const firebaseConfig = {
-        apiKey: "AIzaSyBLCMK2Tm9sk2EBnhqoK9j_y8jiATd-QDA",
-        authDomain: "wealth-wise-3c329.firebaseapp.com",
-        projectId: "wealth-wise-3c329",
-        storageBucket: "wealth-wise-3c329.firebasestorage.app",
-        messagingSenderId: "546585897291",
-        appId: "1:546585897291:web:111d6c2d3170d93f59e0ce",
-        measurementId: "G-PGTS22BHQP"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth();
-    const db = getFirestore();
-
-    // Setup profile upload
-    setupProfileUpload('uploadPhotoBtn', 'photoUpload');
-
-    // Rest of your profile page logic...
-    onAuthStateChanged(auth, (user) => {
-        const loggedInUserId = localStorage.getItem('loggedInUserId');
-        if (loggedInUserId) {
-            const docRef = doc(db, "users", loggedInUserId);
-            getDoc(docRef)
-                .then((docSnap) => {
-                    if (docSnap.exists()) {
-                        const userData = docSnap.data();
-                        document.getElementById('loggedUserFName').innerText = userData.firstName || '';
-                        document.getElementById('firstName').value = userData.firstName || '';
-                        document.getElementById('lastName').value = userData.lastName || '';
-                        document.getElementById('email').value = userData.email || '';
-                        if (userData.profilePhoto) {
-                            document.getElementById('profilePhoto').src = userData.profilePhoto;
-                            document.getElementById('navProfilePhoto').src = userData.profilePhoto;
-                        }
-                    }
-                });
-        } else {
-            window.location.href = '../index.html';
-        }
-    });
-
-    // Handle profile update
-    document.getElementById('updateProfileBtn').addEventListener('click', () => {
-        const userId = localStorage.getItem('loggedInUserId');
-        const firstName = document.getElementById('firstName').value;
-        const lastName = document.getElementById('lastName').value;
-
-        if (!firstName || !lastName) {
-            alert('Please enter both first and last names.');
-            return;
-        }
-
-        const docRef = doc(db, "users", userId);
-        updateDoc(docRef, { firstName, lastName })
-            .then(() => {
-                document.getElementById('loggedUserFName').innerText = firstName;
-                alert('Profile updated successfully!');
-            });
-    });
-</script>
+    <script src="assets/menu.js"></script>
 </body>
 </html>
