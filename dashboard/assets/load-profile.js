@@ -20,12 +20,24 @@ function loadUserProfile() {
 
             // Profile icons mapping
             const PROFILE_ICONS = {
-    1: "images/male.png",
-    2: "images/maleuser.gif",
-    3: "images/female.png",
-    4: "images/femaleuser.gif",
-    // 5: "images/icons8-user-48.png",
-    // 6: "images/male.png"
+    1: "images/userblue.png",
+    2: "images/userred.png",
+    3: "images/usergreen.png",
+    4: "images/useryellow.png",
+    5: "images/thunder.gif",
+    6: "images/male.png",
+    7: "images/maleuser.gif",
+    8: "images/female.png",
+    9: "images/femaleuser.gif",
+    10: "images/h1.jpg",
+    11: "images/h2.jpg",
+    12: "images/h3.jpg",
+    13: "images/h4.jpg",
+    14: "images/h5.jpg",
+    15: "images/h6.jpg",
+    16: "images/h7.jpg",
+    17: "images/j1.jpg",
+    18: "images/j2.jpg"
     
 };
 

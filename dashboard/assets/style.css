@@ -64,8 +64,12 @@ body{
     overflow-x: hidden;
     color: var(--color-dark);
     background-color: var(--color-background);
-    transition: all 0.4s ease;
+    /* transition: all 0.4s ease-in-out; */
+    /* transition: transform .2s; */
+    transition: all 0.5s ease;
+
 }
+
 
 a{
     color: var(--color-dark);
@@ -157,6 +161,7 @@ aside{
     height: 100vh;
 }
 
+
 aside .toggle{
     display: flex;
     align-items: center;
@@ -170,8 +175,10 @@ aside .toggle .logo{
 }
 
 aside .toggle .logo img{
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
+transform: translate(.2rem);
+    
 }
 
 aside .toggle .close{
@@ -190,7 +197,10 @@ aside .sidebar{
     top: 1.5rem;
     transition: all 0.3s ease;
 }
-
+aside .sidebar:hover{
+          transform: scale(1.05);
+    transition: all 0.5s ease-in-out;
+}
 aside .sidebar:hover{
     box-shadow: none;
 }
@@ -269,6 +279,7 @@ main .analyse {
     padding-bottom: 1rem;
 }
 
+
 main .analyse > div{
     background-color: var(--color-white);
     padding: var(--card-padding);
@@ -286,6 +297,10 @@ main .analyse > div{
 
 main .analyse > div:hover{
     box-shadow: none;
+
+          transform: scale(1.05);
+    transition: all 0.4s ease;
+
 }
 
 main .analyse > div .status{
@@ -378,6 +393,7 @@ main .new-users .user-list{
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
 main .new-userss .user-lists{
     background-color: var(--color-white);
     border-radius: var(--card-border-radius);
@@ -392,6 +408,7 @@ main .new-userss .user-lists{
 }
 main .new-users .user-list:hover{
     box-shadow: none;
+    
 }
 
 main .new-users .user-list .user{
@@ -428,6 +445,7 @@ main .recent-orders table{
 
 main .recent-orders table:hover{
     box-shadow: none;
+    
 }
 
 main table tbody td{
@@ -553,6 +571,11 @@ main .recent-orders a{
     box-shadow: var(--box-shadow);
     background-color: var(--color-white);
     border-radius: 50%;
+    cursor: pointer;
+}
+.right-section .reminders .header span:hover{
+          transform: scale(1.05);
+    transition: all 0.4s ease;
 }
 
 .right-section .reminders .notification{
@@ -570,6 +593,10 @@ main .recent-orders a{
 
 .right-section .reminders .notification:hover{
     box-shadow: none;
+
+          transform: scale(1.05);
+    transition: all 0.4s ease;
+
 }
 
 .right-section .reminders .notification .content{
@@ -1492,7 +1519,10 @@ main .recent-orders a{
     height: 100%;
     object-fit: cover;
 }
-
+.profile-photo img:hover{
+          transform: scale(1.05);
+    transition: all 0.4s ease;
+}
 .dropdown-arrow {
     position: absolute;
     bottom: -5px;
@@ -1891,3 +1921,90 @@ main .recent-orders a{
     font-weight: 600;
     color: var(--color-primary);
 }
+
+
+
+/* Profile Icons Responsive Styles */
+.profile-icons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* .profile-icon-option {
+    cursor: pointer;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    width: 100%;
+    aspect-ratio: 1/1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-light);
+} */
+
+/* .profile-icon-option img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.profile-icon-option.selected {
+    border-color: var(--color-primary);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 119, 255, 0.3);
+} */
+
+/* Mobile adjustments */
+/* @media (max-width: 768px) {
+    .profile-icons-grid {
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        gap: 0.75rem;
+        padding: 0.75rem;
+    }
+    
+    .profile-icon-option {
+        border-width: 1px;
+    }
+} */
+
+/* Small mobile devices */
+/* @media (max-width: 480px) {
+    .profile-icons-grid {
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+} */
+
+/* Notification for icon change */
+/* .profile-icon-notification {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    z-index: 1000;
+    animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+} */
