@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://public-frontend-cos.metadl.com/mgx/img/favicon.png" type="image/png">
+    <title>Financial Education - WealthWise</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="public/assets/images/logo-with-text.svg" alt="WealthWise Logo" class="logo-image-with-text">
+                    </a>
+                </div>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="education.html" class="active">Learn</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#" class="btn-primary">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Financial Education Hub</h1>
+            <p>Learn essential financial concepts to make informed decisions</p>
+        </div>
+    </section>
+
+    <section class="education-categories">
+        <div class="container">
+            <div class="education-header">
+                <div class="education-search">
+                    <input type="text" placeholder="Search for financial topics..." class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="education-tools">
+                    <div class="tool-dropdown">
+                        <button class="dropdown-btn">Learning Path <i class="fas fa-chevron-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="#">Beginner's Guide to Finance</a>
+                            <a href="#">Intermediate Investing</a>
+                            <a href="#">Advanced Wealth Building</a>
+                            <a href="#">Debt Elimination</a>
+                        </div>
+                    </div>
+                    <div class="tool-dropdown">
+                        <button class="dropdown-btn">Difficulty <i class="fas fa-chevron-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="#">Beginner</a>
+                            <a href="#">Intermediate</a>
+                            <a href="#">Advanced</a>
+                        </div>
+                    </div>
+                    <div class="view-toggle">
+                        <button class="toggle-btn active"><i class="fas fa-th-large"></i></button>
+                        <button class="toggle-btn"><i class="fas fa-th-list"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="category-filters">
+                <button class="category-filter active" data-category="all">All Topics</button>
+                <button class="category-filter" data-category="budgeting">Budgeting</button>
+                <button class="category-filter" data-category="saving">Saving</button>
+                <button class="category-filter" data-category="investing">Investing</button>
+                <button class="category-filter" data-category="debt">Debt Management</button>
+                <button class="category-filter" data-category="retirement">Retirement</button>
+                <button class="category-filter" data-category="taxes">Taxes</button>
+            </div>
+            <div class="progress-tracker">
+                <div class="progress-header">
+                    <h3>Your Learning Progress</h3>
+                    <span class="progress-percent">27% Complete</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-filled" style="width: 27%"></div>
+                </div>
+                <div class="progress-stats">
+                    <div class="stat">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Articles Read</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Quizzes Passed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Courses Started</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education-grid">
+                <!-- Budgeting Articles -->
+                <div class="education-card" data-category="budgeting">
+                    <div class="education-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Budgeting 101">
+                        <div class="education-tag">Budgeting</div>
+                    </div>
+                    <div class="education-content">
+                        <h3>Budgeting 101: Getting Started</h3>
+                        <p>Learn the fundamentals of creating a budget that works for your lifestyle.</p>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="education-card" data-category="budgeting">
+                    <div class="education-image">
+                        <img src="https://images.unsplash.com/photo-1607863680198-23d4b2565df0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="50/30/20 Rule">
+                        <div class="education-tag">Budgeting</div>
+                    </div>
+                    <div class="education-content">
+                        <h3>The 50/30/20 Budgeting Rule</h3>
+                        <p>A simple framework for allocating your income to needs, wants, and savings.</p>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Saving Articles -->
+                <div class="education-card" data-category="saving">
+                    <div class="education-image">
+                        <img src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Emergency Fund">
+                        <div class="education-tag">Saving</div>
+                    </div>
+                    <div class="education-content">
+                        <h3>Building Your Emergency Fund</h3>
+                        <p>How to create a financial safety net to protect against unexpected expenses.</p>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="education-card" data-category="saving">
+                    <div class="education-image">
+                        <img src="https://images.unsplash.com/photo-1589666564459-93cdd3ab856a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Saving Strategies">
+                        <div class="education-tag">Saving</div>
+                    </div>
+                    <div class="education-content">
+                        <h3>10 Painless Ways to Save More Money</h3>
+                        <p>Simple strategies to boost your savings without feeling deprived.</p>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Investing Articles -->
+                <div class="education-card" data-category="investing">
+                    <div class="education-image">
+                        <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Investment Basics">
+                        <div class="education-tag">Investing</div>
+                    </div>
+                    <div class="education-content">
+                        <h3>Investment Basics for Beginners</h3>
+                        <p>Understanding different investment options and how to get started.</p>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="education-card" data-category="investing">
+                    <div class="education-image">
+                        <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Compound Interest">
+                        <div class="education-tag">Investing</div>
+                    </div>
+                    <div class="education-content">
+                        <h3>The Power of Compound Interest</h3>
+                        <p>How small investments today can grow exponentially over time.</p>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Debt Management Articles -->
+                <div class="education-card" data-category="debt">
+                    <div class="education-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Debt Repayment">
+                        <div class="education-tag">Debt Management</div>
+                    </div>
+                    <div class="education-content">
+                        <h3>Debt Repayment Strategies</h3>
+                        <p>Effective methods to tackle and eliminate debt faster.</p>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="education-card" data-category="debt">
+                    <div class="education-image">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Credit Score">
+                        <div class="education-tag">Debt Management</div>
+                    </div>
+                    <div class="education-content">
+                        <h3>Understanding and Improving Your Credit Score</h3>
+                        <p>What factors impact your credit score and how to boost it.</p>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="education-resources">
+        <div class="container">
+            <div class="section-header">
+                <h2>Additional Learning Resources</h2>
+                <p>Expand your financial knowledge with our curated content</p>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Tutorials</h3>
+                    <p>Learn through our engaging video series covering essential financial topics.</p>
+                    <a href="#" class="btn-secondary">Watch Videos</a>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Book Summaries</h3>
+                    <p>Key insights from top financial books, condensed for easy reading.</p>
+                    <a href="#" class="btn-secondary">Read Summaries</a>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Interactive Quizzes</h3>
+                    <p>Test your knowledge and reinforce your financial learning.</p>
+                    <a href="#" class="btn-secondary">Take Quizzes</a>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <h3>Webinars</h3>
+                    <p>Join our live sessions with financial experts and ask questions.</p>
+                    <a href="#" class="btn-secondary">Register Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Knowledge is Power</h2>
+                <p>Start your financial education journey today and take the first step toward financial independence.</p>
+                <a href="#" class="btn-primary">Create Free Account</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Wealth<span>Wise</span></h2>
+                    <p>Empowering Financial Independence</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="education.html">Financial Education</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Security</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 WealthWise. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Category filtering
+            const categoryFilters = document.querySelectorAll('.category-filter');
+            const educationCards = document.querySelectorAll('.education-card');
+            
+            categoryFilters.forEach(filter => {
+                filter.addEventListener('click', function() {
+                    // Remove active class from all filters
+                    categoryFilters.forEach(f => f.classList.remove('active'));
+                    
+                    // Add active class to clicked filter
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // Show/hide cards based on category
+                    educationCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

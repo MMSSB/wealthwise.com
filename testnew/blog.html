@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://public-frontend-cos.metadl.com/mgx/img/favicon.png" type="image/png">
+    <title>Blog - WealthWise</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+    <a href="index.html" class="logo-link">
+        <div class="logo-image-container">
+            <img src="public/assets/images/WealthWise1.png" alt="WealthWise Logo" class="logo-image">
+        </div>
+        <h1 class="logo-text">Wealth<span>Wise</span></h1>
+    </a>
+</div>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                     <!-- <li><a href="education.html">Learn</a></li> --> 
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#" class="btn-primary">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>WealthWise Blog</h1>
+            <p>Insights, tips, and strategies for financial success</p>
+        </div>
+    </section>
+
+    <section class="blog-section">
+        <div class="container">
+            <!-- <div class="blog-filters">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search articles...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="category-buttons">
+                    <button class="category-btn active">All</button>
+                    <button class="category-btn">Budgeting</button>
+                    <button class="category-btn">Investing</button>
+                    <button class="category-btn">Saving</button>
+                    <button class="category-btn">Debt</button>
+                </div>
+            </div> -->
+            
+            <div class="blog-grid">
+                <!-- Featured Post -->
+                <!-- <div class="blog-post featured-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Investment Strategies">
+                        <div class="post-category">Investing</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">June 15, 2023</span>
+                            <span class="post-author">By Sarah Johnson</span>
+                        </div>
+                        <h2>10 Investment Strategies for Long-Term Wealth Building</h2>
+                        <p>Learn the proven investment approaches that can help you build sustainable wealth over time, even in volatile markets.</p>
+                        <a href="posts/investment-strategies.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div> -->
+                
+                <!-- Regular Posts -->
+                <!-- <div class="blog-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Budgeting Tips">
+                        <div class="post-category">Budgeting</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">June 10, 2023</span>
+                            <span class="post-author">By Michael Rodriguez</span>
+                        </div>
+                        <h3>5 Budgeting Methods to Fit Any Lifestyle</h3>
+                        <p>Discover which budgeting approach works best for your personality and financial situation.</p>
+                        <a href="posts/budgeting-methods.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Emergency Fund">
+                        <div class="post-category">Saving</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">June 5, 2023</span>
+                            <span class="post-author">By Emily Chen</span>
+                        </div>
+                        <h3>Why Your Emergency Fund is Your Financial Safety Net</h3>
+                        <p>How to build and maintain an emergency fund that provides peace of mind in uncertain times.</p>
+                        <a href="posts/emergency-fund.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Credit Score">
+                        <div class="post-category">Debt</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">May 28, 2023</span>
+                            <span class="post-author">By John Mitchell</span>
+                        </div>
+                        <h3>7 Ways to Boost Your Credit Score in 30 Days</h3>
+                        <p>Practical strategies to improve your credit score quickly and maintain good credit long-term.</p>
+                        <a href="posts/boost-credit-score.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Side Hustles">
+                        <div class="post-category">Income</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">May 22, 2023</span>
+                            <span class="post-author">By Sarah Johnson</span>
+                        </div>
+                        <h3>10 Side Hustles You Can Start This Weekend</h3>
+                        <p>Increase your income streams with these accessible side gigs that don't require special skills to get started.</p>
+                        <a href="posts/side-hustles.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Compound Interest">
+                        <div class="post-category">Investing</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">May 15, 2023</span>
+                            <span class="post-author">By Michael Rodriguez</span>
+                        </div>
+                        <h3>The Magic of Compound Interest: How Small Investments Grow</h3>
+                        <p>Understanding how compound interest works can transform your approach to saving and investing.</p>
+                        <a href="posts/compound-interest.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div> -->
+            </div>
+            
+            <!-- <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#" class="next">Next <i class="fas fa-chevron-right"></i></a>
+            </div> -->
+        </div>
+    </div>
+    </section>
+    
+    <!-- <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for the latest financial insights and tips.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section> -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Wealth<span>Wise</span></h2>
+                    <p>Empowering Financial Independence</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="education.html">Financial Education</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Security</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 WealthWise. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Blog category filtering
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Filtering functionality would go here in a real application
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

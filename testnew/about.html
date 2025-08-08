@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://public-frontend-cos.metadl.com/mgx/img/favicon.png" type="image/png">
+    <title>About Us - WealthWise</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <!-- <div class="logo">
+                    <a href="index.html">
+                        <img src="public/assets/images/logo-with-text.svg" alt="WealthWise Logo" class="logo-image-with-text">
+                    </a>
+                </div> -->
+                                <div class="logo">
+    <a href="index.html" class="logo-link">
+        <div class="logo-image-container">
+            <img src="public/assets/images/WealthWise1.png" alt="WealthWise Logo" class="logo-image">
+        </div>
+        <h1 class="logo-text">Wealth<span>Wise</span></h1>
+    </a>
+</div>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <!-- <li><a href="education.html">Learn</a></li> -->
+                    <li><a href="about.html" class="active">About</a></li>
+                    <!-- <li><a href="blog.html">Blog</a></li> -->
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#" class="btn-primary">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>About WealthWise</h1>
+            <p>Our mission, vision, and the team behind the platform</p>
+        </div>
+    </section>
+
+    <!-- <section class="about-story">
+        <div class="container">
+            <div class="timeline-nav">
+                <button class="timeline-btn active" data-year="2020">2020</button>
+                <button class="timeline-btn" data-year="2021">2021</button>
+                <button class="timeline-btn" data-year="2022">2022</button>
+                <button class="timeline-btn" data-year="2023">2023</button>
+                <div class="timeline-progress"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1573164574511-73c773193279?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Our Story">
+                    <div class="image-badges">
+                        <span class="badge">Founded 2020</span>
+                        <span class="badge">10,000+ Users</span>
+                        <span class="badge">Award-winning</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <div class="about-header">
+                        <h2>Our Story</h2>
+                        <div class="social-share">
+                            <span>Share our journey:</span>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <p>WealthWise was born from a simple observation: despite having access to more financial information than ever before, many people still struggle with managing their personal finances.</p>
+                    <p>Our founders, a team of finance professionals and technology experts, realized that there was a significant gap between financial knowledge and practical application. They set out to create a platform that not only educates users about financial concepts but also provides them with the tools to immediately apply that knowledge.</p>
+                    <p>Since our launch, we've helped thousands of individuals take control of their financial futures by combining educational content with practical budgeting, saving, and investment tools. Our user-friendly platform makes financial management accessible to everyone, regardless of their background or current financial situation.</p>
+                    <div class="about-cta">
+                        <a href="#" class="btn-primary">Join Our Journey</a>
+                        <a href="#" class="btn-secondary">Watch Our Story</a>
+                    </div>
+                </div>
+            </div>
+            <div class="milestone-counter">
+                <div class="milestone">
+                    <div class="milestone-number">10,000+</div>
+                    <div class="milestone-label">Active Users</div>
+                </div>
+                <div class="milestone">
+                    <div class="milestone-number">$25M+</div>
+                    <div class="milestone-label">Savings Tracked</div>
+                </div>
+                <div class="milestone">
+                    <div class="milestone-number">500+</div>
+                    <div class="milestone-label">Financial Articles</div>
+                </div>
+                <div class="milestone">
+                    <div class="milestone-number">15+</div>
+                    <div class="milestone-label">Countries</div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+<section class="about-story">
+    <div class="container">
+        <div class="timeline-nav">
+            <button class="timeline-btn active" data-year="2020" data-image="https://images.unsplash.com/photo-1573164574511-73c773193279?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" data-title="Our Humble Beginnings" data-content="We started with a small team of financial experts and developers who wanted to make financial literacy accessible to everyone.">2020</button>
+            <button class="timeline-btn" data-year="2021" data-image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" data-title="First Major Update" data-content="Launched our mobile app and reached 1,000 active users within the first month.">2021</button>
+            <button class="timeline-btn" data-year="2022" data-image="https://images.unsplash.com/photo-1559526324-593bc073d938?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" data-title="Expanding Our Reach" data-content="Partnered with educational institutions to bring financial literacy to students.">2022</button>
+            <button class="timeline-btn" data-year="2023" data-image="https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" data-title="Current Achievements" data-content="Now serving over 10,000 users with advanced financial tools and resources.">2023</button>
+            <div class="timeline-progress"></div>
+        </div>
+        
+        <div class="about-content">
+            <div class="about-image">
+                <img id="timeline-image" src="https://images.unsplash.com/photo-1573164574511-73c773193279?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Our Story">
+                <div class="image-badges">
+                    <!-- <span class="badge">Founded 2020</span>
+                    <span class="badge">10,000+ Users</span>
+                    <span class="badge">Award-winning</span> -->
+                </div>
+            </div>
+            <div class="about-text">
+                <div class="about-header">
+                    <h2 id="timeline-title">Our Humble Beginnings</h2>
+                    <div class="social-share">
+                        <!-- <span>Share our journey:</span>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a> -->
+                    </div>
+                </div>
+                <p id="timeline-content">We started with a small team of financial experts and developers who wanted to make financial literacy accessible to everyone.</p>
+                <div class="about-cta">
+                    <!-- <a href="#" class="btn-primary">Join Our Journey</a>
+                    <a href="#" class="btn-secondary">Watch Our Story</a> -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="milestone-counter">
+            <div class="milestone">
+                <div class="milestone-number">10,000+</div>
+                <div class="milestone-label">Active Users</div>
+            </div>
+            <div class="milestone">
+                <div class="milestone-number">$25M+</div>
+                <div class="milestone-label">Savings Tracked</div>
+            </div>
+            <div class="milestone">
+                <div class="milestone-number">500+</div>
+                <div class="milestone-label">Financial Articles</div>
+            </div>
+            <div class="milestone">
+                <div class="milestone-number">15+</div>
+                <div class="milestone-label">Countries</div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mission-vision-cards">
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To empower individuals with the knowledge and tools they need to make informed financial decisions and achieve financial independence.</p>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-binoculars"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>A world where everyone has access to financial education and the resources needed to build a secure financial future.</p>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Our Values</h3>
+                    <p>Transparency, accessibility, empowerment, innovation, and a commitment to our users' financial success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Team</h2>
+                <p>The experts behind WealthWise</p>
+            </div>
+            <div class="team-members">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="public/assets/images/mmssb.jpg" alt="John Mitchell">
+                    </div>
+                    <h3>Mohamed Mohamed Saad</h3>
+                    <p class="member-role">Co-Founder & CEO</p>
+                    <p>With 15+ years in fintech, John leads our vision to transform personal finance management.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Sarah Johnson">
+                    </div>
+                    <h3>Sarah Johnson</h3>
+                    <p class="member-role">Co-Founder & CFO</p>
+                    <p>Former investment advisor with a passion for making financial literacy accessible to all.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Michael Rodriguez">
+                    </div>
+                    <h3>Michael Rodriguez</h3>
+                    <p class="member-role">CTO</p>
+                    <p>Tech innovator ensuring our platform remains secure, user-friendly, and cutting-edge.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Emily Chen">
+                    </div>
+                    <h3>Emily Chen</h3>
+                    <p class="member-role">Head of Education</p>
+                    <p>Financial educator specializing in transforming complex concepts into engaging learning materials.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="public/assets/images/abdo.jpg" alt="Emily Chen">
+                    </div>
+                    <h3>Emily Chen</h3>
+                    <p class="member-role">Head of Education</p>
+                    <p>Financial educator specializing in transforming complex concepts into engaging learning materials.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="team">
+    <div class="container">
+        <div class="section-header">
+            <h2>Meet Our Team</h2>
+            <p>The experts behind WealthWise</p>
+        </div>
+        
+        <div class="team-slider">
+            <div class="team-slider-container" id="teamSlider">
+                <!-- Team Member 1 -->
+                <div class="team-slide">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="John Mitchell">
+                    </div>
+                    <h3>John Mitchell</h3>
+                    <p class="member-role">Co-Founder & CEO</p>
+                    <p>With 15+ years in fintech, John leads our vision to transform personal finance management.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-slide">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Sarah Johnson">
+                    </div>
+                    <h3>Sarah Johnson</h3>
+                    <p class="member-role">Co-Founder & CFO</p>
+                    <p>Former investment advisor with a passion for making financial literacy accessible to all.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Add more team members as needed -->
+                <!-- Team Member 3 -->
+                <div class="team-slide">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Michael Rodriguez">
+                    </div>
+                    <h3>Michael Rodriguez</h3>
+                    <p class="member-role">CTO</p>
+                    <p>Tech innovator ensuring our platform remains secure, user-friendly, and cutting-edge.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-slide">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Emily Chen">
+                    </div>
+                    <h3>Emily Chen</h3>
+                    <p class="member-role">Head of Education</p>
+                    <p>Financial educator specializing in transforming complex concepts into engaging learning materials.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 5 -->
+                <div class="team-slide">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Emily Chen">
+                    </div>
+                    <h3>abdo</h3>
+                    <p class="member-role">Head of Education</p>
+                    <p>Financial educator specializing in transforming complex concepts into engaging learning materials.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Team Member 5 -->
+                <div class="team-slide">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Emily Chen">
+                    </div>
+                    <h3>abdo</h3>
+                    <p class="member-role">Head of Education</p>
+                    <p>Financial educator specializing in transforming complex concepts into engaging learning materials.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Team Member 5 -->
+                <div class="team-slide">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Emily Chen">
+                    </div>
+                    <h3>abdo</h3>
+                    <p class="member-role">Head of Education</p>
+                    <p>Financial educator specializing in transforming complex concepts into engaging learning materials.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-controls">
+                <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots"></div>
+                <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="partners">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Partners</h2>
+                <p>Working together to improve financial literacy</p>
+            </div>
+            <div class="partner-logos">
+                <a href="https://firebase.google.com" target="_blank">
+                    <div class="partner-logo">
+                    <img src="public/assets/images/Firebase.png" alt="Firebase" title="Firebase">
+                </div></a>
+                <a href="https://console.cloud.google.com" target="_blank">
+                <div class="partner-logo">
+                    <img src="public/assets/images/google.png" alt="Google" title="Google">
+                </div></a>
+                <a href="https://firebase.google.com" target="_blank">
+                <div class="partner-logo">
+                    <img src="public/assets/images/github.png" alt="Github" title="Github">
+                </div></a>
+                <a href="https://must.edu.eg" target="_blank">
+                <div class="partner-logo">
+                    <img src="public/assets/images/must.png" alt="Must" title="Must">
+                </div></a>
+                <a href="https://mmssb.github.io" target="_blank">
+                <div class="partner-logo">
+                    <img src="public/assets/images/mmslogo.PNG" alt="MMS" title="MMS">
+                </div></a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join Our Mission</h2>
+                <p>Be part of the financial revolution and take control of your financial future today.</p>
+                <a href="#" class="btn-primary">Get Started For Free</a>
+            </div>
+        </div>
+    </section> -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Wealth<span>Wise</span></h2>
+                    <p>Empowering Financial Independence</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="education.html">Financial Education</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Security</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 WealthWise. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>
