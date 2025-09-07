@@ -2,15 +2,7 @@
 // import { getFirestore, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
 
-// const firebaseConfig = {
-//     apiKey: "AIzaSyBLCMK2Tm9sk2EBnhqoK9j_y8jiATd-QDA",
-//     authDomain: "wealth-wise-3c329.firebaseapp.com",
-//     projectId: "wealth-wise-3c329",
-//     storageBucket: "wealth-wise-3c329.firebasestorage.app",
-//     messagingSenderId: "546585897291",
-//     appId: "1:546585897291:web:111d6c2d3170d93f59e0ce",
-//     measurementId: "G-PGTS22BHQP"
-// };
+
 
 // const app = initializeApp(firebaseConfig);
 // export const db = getFirestore(app);
@@ -89,13 +81,13 @@ import { getFirestore, doc, updateDoc } from "https://www.gstatic.com/firebasejs
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBLCMK2Tm9sk2EBnhqoK9j_y8jiATd-QDA",
-    authDomain: "wealth-wise-3c329.firebaseapp.com",
-    projectId: "wealth-wise-3c329",
-    storageBucket: "wealth-wise-3c329.firebasestorage.app",
-    messagingSenderId: "546585897291",
-    appId: "1:546585897291:web:111d6c2d3170d93f59e0ce",
-    measurementId: "G-PGTS22BHQP"
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
 };
 
 const app = initializeApp(firebaseConfig);
@@ -214,4 +206,5 @@ function adjustIconLayout() {
             icon.style.minHeight = '50px';
         });
     }
+
 }
